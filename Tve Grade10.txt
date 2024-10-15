@@ -412,5 +412,64 @@ Summary of Git Commands Used:
 • Tag a Commit: bash - [git tag -a v1.0 -m "message"]
  • Reset Commits: bash - [git reset --soft HEAD~1] bash - [git reset --hard HEAD~1]
 
+Things I should know
+1. Basic Linux Commands
+Navigating Directories:
+•	cd (Change directory): Move between directories.
+•	ls (List directory contents): View files and directories.
+Creating, Reading, Updating, and Deleting Files:
+•	touch (Create a new empty file): Create files.
+•	nano (Edit files): Text editor to edit files directly in the terminal.
+•	rm (Remove): Delete files.
+•	mv (Move or rename files): Move or rename files.
+•	cp (Copy files): Duplicate files.
+Managing Directories:
+•	mkdir (Make directory): Create directories.
+•	rmdir (Remove directory): Remove empty directories.
+________________________________________
+2. Linux Permissions
+Viewing File Permissions:
+•	ls -l (List in long format): Displays file permissions, ownership, and other details.
+Modifying File Permissions:
+•	chmod (Change mode): Modify file and directory permissions.
+•	chown (Change owner): Change ownership of files and directories.
+________________________________________
+3. Basic Git Usage
+Initializing a Repository:
+•	git init: Initialize a new Git repository.
+Staging and Committing Changes:
+•	git add (Stage changes): Add files to the staging area.
+•	git commit -m (Commit changes): Commit staged changes with a message.
+Pushing and Pulling:
+•	git push: Push local commits to a remote repository (e.g., GitHub).
+•	git pull: Pull updates from a remote repository to sync with the local repository.
+________________________________________
+4. Setting Up Git and GitHub
+Installing Tools:
+•	Git: Install Git (version control).
+•	GitKraken: Install GitKraken (Git GUI client).
+Creating and Managing Repositories:
+•	Create repositories on GitHub.
+•	Collaborating: Add collaborators to work together on GitHub repositories.
+________________________________________
+5. Basic Terminal Navigation
+•	pwd (Print working directory): Check the current directory.
+•	find (Find files): Search for files in a directory hierarchy.
+•	grep (Search inside files): Search for patterns in files.
+________________________________________
+6. Managing Text Files
+•	nano (Edit files): Simple text editor for creating or editing files.
+________________________________________
+7. Working with Debian VMs
+Installing Debian OS:
+•	Install Debian OS using VMware.
+Installing Software:
+•	apt-get (Package manager for Debian-based systems): Install and manage software packages.
+________________________________________
+8. Understanding the Linux Filesystem Structure
+•	Understanding the basic hierarchy of Linux filesystem (e.g., /home, /var, /etc, /usr, etc.).
+
+
+
 
 
