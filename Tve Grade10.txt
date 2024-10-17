@@ -469,6 +469,406 @@ ________________________________________
 8. Understanding the Linux Filesystem Structure
 •	Understanding the basic hierarchy of Linux filesystem (e.g., /home, /var, /etc, /usr, etc.).
 
+Companion Guide for Git Practice Activity
+Welcome to your Git practice activity! This guide will help you understand the commands you're using and provide tips for navigating potential issues.
+1. Understanding the Terminal and Commands
+What is the Terminal?
+The terminal is a text-based interface where you type commands to interact with your computer. In Debian 12, you’ll use it to manage your system.
+Example:
+bash
+Copy code
+sudo apt update
+This command updates your system’s package list to ensure your software is current.
+What is sudo?
+sudo stands for "superuser do," allowing you to execute commands with elevated (administrator) permissions. Without sudo, certain commands may fail due to lack of permission.
+Common Issue: If you see Permission denied, it's likely because you didn't use sudo where required.
+________________________________________
+2. Installing Software and Handling Errors
+Updating the Package List
+Before installing any new software, always update the package list to ensure you're fetching the latest versions.
+Command:
+bash
+Copy code
+sudo apt update
+Troubleshooting Tip: If you encounter an issue like "Unable to fetch repositories", check your internet connection.
+Installing Git
+Command:
+bash
+Copy code
+sudo apt install git
+What it does: Installs Git, a version control system that tracks changes to your project files.
+Troubleshooting Tip: If the installation fails, try running sudo apt update first or verify your network connection.
+________________________________________
+3. Git Basics: Terminology Overview
+Here are some basic Git terms you should know:
+•	Repository: A directory where Git tracks changes to your files.
+•	Commit: A saved snapshot of your project at a particular point in time.
+•	Staging Area: Where you place files you intend to commit.
+•	Branch: A separate line of development. For example, you can work on a feature branch without affecting the main branch.
+•	Merge: Combining changes from one branch into another.
+•	Conflict: Occurs when Git detects changes in the same file from different branches and can't automatically reconcile them.
+________________________________________
+4. Text Editors: Nano vs. Gedit
+In this assignment, you'll be editing files using either nano (a command-line editor) or gedit (a graphical editor).
+Nano (Recommended)
+Nano is a simple, default text editor on most Linux systems.
+Command:
+bash
+Copy code
+nano filename
+Usage Tips:
+•	Use Ctrl + X to exit.
+•	Press Y to confirm saving changes and Enter to save the file.
+Gedit (Graphical Editor)
+Gedit is a graphical editor (similar to Notepad in Windows).
+Command:
+bash
+Copy code
+sudo apt install gedit
+Troubleshooting Tip: If installing gedit fails, it could be due to missing packages. Stick to nano if problems arise.
+________________________________________
+5. Common Issues and Troubleshooting
+Permission Errors
+If you see an error like Permission denied, add sudo before your command. For example:
+bash
+Copy code
+sudo apt install git
+File Not Found
+If you get a No such file or directory error when navigating directories, double-check the file or directory name.
+Solution: Use the command:
+bash
+Copy code
+ls
+to list files in the current directory.
+________________________________________
+6. Understanding Branching and Merging
+Git's branching and merging features allow you to work on different features or versions of a project simultaneously.
+Main Branch (main)
+This is your primary working branch.
+Feature Branches (e.g., develop, add-monster)
+These branches are where you work on new features or tasks without affecting the main branch.
+Switching Branches
+Command:
+bash
+Copy code
+git checkout branch-name
+Creating a Branch
+Command:
+bash
+Copy code
+git checkout -b branch-name
+This command creates a new branch and switches to it. Use it when starting a new feature.
+Merging Branches
+Command:
+bash
+Copy code
+git merge branch-name
+This combines changes from one branch (e.g., develop) into another (e.g., main).
+Troubleshooting Tip: If you encounter a merge conflict, Git will tell you which files are in conflict. You'll need to manually edit those files to resolve the conflict.
+________________________________________
+7. Simplifying Your Git Workflow with Aliases
+Git aliases allow you to create shortcuts for commonly used commands.
+Creating Aliases
+•	To create a shortcut for git status:
+bash
+Copy code
+git config --global alias.st status
+•	Similarly, create aliases for other commands:
+o	git config --global alias.ci commit (for git commit)
+o	git config --global alias.co checkout (for git checkout)
+o	git config --global alias.br branch (for git branch)
+________________________________________
+8. Troubleshooting Merge Conflicts
+A merge conflict happens when Git can't automatically merge changes. Here's how to resolve it:
+1.	Git will show you the conflict markers (e.g., <<<<<<< HEAD).
+2.	Open the conflicting file and decide which changes to keep.
+3.	Remove the conflict markers once resolved.
+Command to finalize the resolution:
+bash
+Copy code
+git add filename
+git commit -m "Resolve merge conflict"
+________________________________________
+9. Undoing Changes
+Restoring Files to Their Last Committed State
+Command:
+bash
+Copy code
+git restore filename
+In older Git versions, use:
+bash
+Copy code
+git checkout -- filename
+Undoing Commits
+•	To undo the last commit but keep your changes:
+bash
+Copy code
+git reset --soft HEAD~1
+•	To undo the commit and discard all changes:
+bash
+Copy code
+git reset --hard HEAD~1
+Warning: Be careful with --hard, as it deletes your changes permanently.
+________________________________________
+10. General Tips for Success
+•	Take it slow: If you're new to Git or the terminal, go step-by-step. Don’t rush, and don’t hesitate to experiment.
+•	Ask for help: If you’re stuck, search for solutions online or ask for guidance.
+•	Practice regularly: Git is a powerful tool, and regular use will make you more comfortable.
+________________________________________
+Conclusion
+This guide should help clarify the commands and steps in your assignment. Git is flexible, so don’t worry about making mistakes—Git’s ability to undo changes makes it a great tool for experimenting and learning. Good luck, and happy coding!
+
+Objective:
+In this assignment, you will expand your "class notes" with thorough research on Bash scripting, system monitoring, and system security. This will help you prepare for an upcoming project where you'll apply these skills. Here's how you will approach this:
+1.	Research key topics:
+o	Bash Scripting
+o	System Monitoring
+o	System Security
+2.	Update your "class notes" with definitions, commands, examples, and instructions. Stay organized by separating the topics.
+3.	Use Git to track changes, making regular commits. You should log at least two commits per class and push them to your GitHub repository.
+________________________________________
+Part 1: Bash Scripting
+1. Definition: What is a Bash script? What are its uses in Linux?
+A Bash script is simply a text file containing a series of commands that are executed by the Bash shell (which is the command-line interpreter used by most Linux systems). It helps automate repetitive tasks or processes that would otherwise be done manually.
+Uses of Bash scripts in Linux:
+•	Automating tasks: Scripts can automate routine tasks like cleaning up files, updating software, or backing up data.
+•	System maintenance: Admins use scripts to monitor system health, check logs, and manage resources.
+•	Task scheduling: Combined with tools like cron, Bash scripts are scheduled to run automatically at specified times.
+•	Managing files: Scripts are often used for file management tasks like renaming files, moving files to different directories, or deleting old files.
+2. Basic Syntax: How to write a simple Bash script
+•	Every Bash script starts with a shebang (#!/bin/bash), which tells the system that this file should be run in the Bash shell.
+Example of a simple script:
+bash
+Copy code
+#!/bin/bash
+echo "Hello, World!"
+Let’s break it down:
+•	#!/bin/bash tells the system to use the Bash interpreter.
+•	echo "Hello, World!" is a command that prints the text “Hello, World!” to the terminal.
+Using variables:
+•	Variables store values that you can reuse in your script. You don’t need to declare the type of the variable (as you do in other programming languages like Python or Java).
+Example:
+bash
+Copy code
+#!/bin/bash
+NAME="John"
+echo "Hello, $NAME"
+Here:
+•	NAME="John" sets the variable NAME to "John".
+•	$NAME is used to access the value stored in NAME.
+Control structures (e.g., if-else, for and while loops):
+Control structures allow you to make decisions and repeat actions in your script.
+•	If-else: Executes code based on a condition.
+bash
+Copy code
+#!/bin/bash
+if [ $NAME == "John" ]; then
+  echo "Hi, John!"
+else
+  echo "You are not John."
+fi
+•	For loop: Repeats a set of commands for each item in a list.
+bash
+Copy code
+#!/bin/bash
+for i in 1 2 3 4 5; do
+  echo "Number: $i"
+done
+This will print numbers from 1 to 5.
+•	While loop: Repeats commands as long as a condition is true.
+bash
+Copy code
+#!/bin/bash
+counter=1
+while [ $counter -le 5 ]; do
+  echo "Counter: $counter"
+  counter=$((counter + 1))
+done
+This will print the counter value from 1 to 5.
+3. Key Bash Commands
+•	echo: Prints text or variables to the screen.
+o	Example: echo "This is Bash scripting"
+•	read: Accepts user input.
+o	Example:
+bash
+Copy code
+read -p "Enter your name: " name
+echo "Hello, $name"
+•	touch: Creates an empty file.
+o	Example: touch myfile.txt
+•	rm: Deletes a file.
+o	Example: rm myfile.txt
+•	chmod: Changes file permissions.
+o	Example: chmod +x script.sh (Makes the file executable)
+4. Self-Made Instructions:
+Let’s write a small Bash script that checks if a directory exists, and if not, creates it.
+1.	Open a text editor like nano and create a new file:
+bash
+Copy code
+nano check_directory.sh
+2.	Write this script inside check_directory.sh:
+bash
+Copy code
+#!/bin/bash
+if [ -d "myfolder" ]; then
+  echo "Directory already exists."
+else
+  echo "Directory does not exist. Creating it now..."
+  mkdir myfolder
+  echo "Directory created."
+fi
+3.	Save the file by pressing Ctrl + X, then Y, then Enter.
+4.	Make the script executable:
+bash
+Copy code
+chmod +x check_directory.sh
+5.	Run the script:
+bash
+Copy code
+./check_directory.sh
+This script will check if the directory named myfolder exists, and if it doesn't, it will create the directory.
+________________________________________
+Part 2: System Monitoring
+1. Definition: What is system monitoring? Why is it important?
+System monitoring refers to the process of tracking and observing a system’s performance metrics such as CPU usage, memory usage, disk space, and network traffic. It helps ensure that the system is running smoothly, and it can alert you to potential issues before they become critical.
+Why is system monitoring important?
+•	Detect performance bottlenecks: Identify when the system resources (like CPU or memory) are being overused.
+•	Prevent system failures: By catching issues early, you can prevent crashes or downtime.
+•	Historical data: Monitoring provides data for future resource planning.
+2. Key Tools for System Monitoring
+•	top: Displays real-time information about running processes, CPU usage, and memory usage.
+o	Example:
+bash
+Copy code
+top
+Use top to see which processes are consuming the most CPU and memory.
+•	htop: A more user-friendly and colorful version of top. It shows real-time system statistics, including CPU usage, memory, swap usage, and running processes.
+o	To use htop, you may need to install it:
+bash
+Copy code
+sudo apt-get install htop
+htop
+•	df: Shows the amount of disk space used and available on the system.
+o	Example:
+bash
+Copy code
+df -h
+The -h flag makes the output "human-readable," showing sizes in MB, GB, etc.
+•	uptime: Tells you how long the system has been running and gives information about system load.
+o	Example:
+bash
+Copy code
+uptime
+3. Log Monitoring
+System logs are important for tracking system activity and troubleshooting problems. These logs are stored in the /var/log directory.
+•	journalctl: This command is used to view logs from systemd, the system and service manager for Linux.
+o	Example: View recent system logs:
+bash
+Copy code
+journalctl -xe
+•	Logs in /var/log: This directory contains many log files. For example:
+o	/var/log/syslog: Contains system activity logs.
+o	/var/log/auth.log: Contains login-related logs (useful for security monitoring).
+To view a log, use the cat or less commands.
+Example:
+bash
+Copy code
+cat /var/log/syslog
+4. Self-Made Instructions:
+To monitor system resource usage:
+1.	Use htop for real-time information on CPU and memory usage:
+bash
+Copy code
+htop
+Press q to quit.
+2.	Check disk space with df:
+bash
+Copy code
+df -h
+3.	View logs to identify potential system issues:
+bash
+Copy code
+journalctl -xe
+________________________________________
+Part 3: System Security
+1. Definition: What are basic system security principles on Linux?
+Linux security is based on controlling access and ensuring that users and processes can only do what they are allowed to do. Some of the key principles include:
+•	Least privilege: Users and processes should have the minimum level of access they need to function.
+•	File permissions: Controlling who can read, write, or execute a file.
+•	User management: Controlling who has access to the system and what actions they can perform.
+•	Firewall: Blocking unwanted network traffic to protect the system from attacks.
+2. File Permissions
+Each file and directory in Linux has permissions that determine who can read, write, and execute it.
+•	Read (r): The ability to view the file or directory.
+•	Write (w): The ability to modify or delete the file or directory.
+•	Execute (x): The ability to run the file as a program or access the directory.
+Using chmod, chown, and ls -l:
+•	ls -l: Displays a long listing of files, including their permissions.
+o	Example:
+bash
+Copy code
+ls -l
+The first column shows the permissions of each file.
+•	chmod: Changes file permissions. Use it to grant or revoke read, write, or execute permissions.
+o	Example: To make a file executable:
+bash
+Copy code
+chmod +x script.sh
+•	chown: Changes the ownership of a file or directory.
+o	Example: Change the owner of a file:
+bash
+Copy code
+sudo chown user1 file.txt
+3. User Management
+Managing users in Linux involves adding, modifying, and removing users.
+•	adduser: Adds a new user to the system.
+o	Example:
+bash
+Copy code
+sudo adduser newuser
+•	usermod: Modifies an existing user’s account.
+o	Example: Add a user to the sudo group to give them administrative privileges:
+bash
+Copy code
+sudo usermod -aG sudo newuser
+•	deluser: Removes a user from the system.
+o	Example:
+bash
+Copy code
+sudo deluser newuser
+4. Firewall Basics
+Linux uses the Uncomplicated Firewall (ufw) to manage incoming and outgoing network traffic.
+•	Enable the firewall:
+bash
+Copy code
+sudo ufw enable
+•	Allow traffic on specific ports (for example, allow HTTP traffic on port 80):
+bash
+Copy code
+sudo ufw allow 80/tcp
+5. Self-Made Instructions:
+To secure a folder and set up basic firewall rules:
+1.	Use chmod to make a directory accessible only to the owner:
+bash
+Copy code
+chmod 700 foldername
+2.	Enable the firewall using ufw:
+bash
+Copy code
+sudo ufw enable
+________________________________________
+Using Git for Updates
+Requirements:
+1.	Commit your changes regularly.
+Example commit message:
+bash
+Copy code
+git commit -m "Added Bash script examples"
+2.	Push your commits to your GitHub repository:
+bash
+Copy code
+git push origin main
+
 
 
 
