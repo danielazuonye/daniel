@@ -869,6 +869,61 @@ bash
 Copy code
 git push origin main
 
+Bash Scripting Basics
+1. What is #!/bin/bash?
+•	#!/bin/bash is called a shebang. It tells the system which interpreter to use to execute the script.
+•	In this case, #!/bin/bash specifies that the script should be run using the Bash shell.
+2. What is echo and How to Use It?
+•	echo is a command used to display text or output a message to the terminal.
+•	Syntax:
+bash
+Copy code
+echo [options] [text]
+•	Example:
+bash
+Copy code
+echo "Hello, World!"
+This will print Hello, World! to the terminal.
+3. What is read and How to Use It?
+•	read is a command used to take input from the user and store it in a variable.
+•	Syntax:
+bash
+Copy code
+read [variable_name]
+•	Example:
+bash
+Copy code
+echo "Enter your name:"
+read name
+echo "Hello, $name!"
+In this example, the script asks for the user's name, stores it in the variable name, and then prints a greeting using that variable.
+4. What is a Variable?
+•	A variable is a storage location where you can store values like strings, numbers, etc. Variables make it easier to reuse values in your script.
+5. How to Declare a Variable?
+•	Variables are declared by assigning a value to a name without any spaces around the equals sign (=).
+•	Syntax:
+bash
+Copy code
+variable_name=value
+•	Example:
+bash
+Copy code
+name="Daniel"
+6. How to Call a Variable in Context?
+•	To use or reference a variable in a script, prefix its name with a $.
+•	Example:
+bash
+Copy code
+echo "Hello, $name!"
+This will print Hello, Daniel! if name="Daniel" was declared earlier in the script.
+
+
+
+
+
+
+
+
 
 
 
