@@ -961,6 +961,26 @@ exit 1 ends the script. The number 1 is an error code, which means something wen
 If the user types something that’s not a valid number, the script stops here.
 Tip: use an echo statement to give a clear message to yourself, and your user about what happened.
 
+Octal Notation
+
+Type	Owner	Group	Other
+-	r-x	rw-	rw-
+d	r-x	rw-	rw-
+d	rwx	-xr	-x
+			
+- at the start = file
+d at the start = directory
+ls -l = view permissions
+r = read = 4
+w = write = 2
+x = execute = 1
+types of people it affects
+User/owner = u
+Group = g
+ALL = o
+
+
+
 
 
 
